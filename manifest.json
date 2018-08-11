@@ -1,0 +1,32 @@
+{
+    "name": "Injector",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Inject JS",
+	"browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+	},
+	"background": {
+    "scripts": ["background.js"],
+    "persistent": false
+	},
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+				"jquery.min.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "https://*/*",
+        "http://*/*",
+        "tabs"
+    ],
+    "web_accessible_resources": [
+		"inject.js"
+    ]
+}
